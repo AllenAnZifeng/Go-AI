@@ -3,7 +3,7 @@ import gym
 import go_ai.policies.baselines
 from go_ai import game, utils
 
-args = utils.hyperparameters(['customdir=bin/baselines/'])
+args = utils.hyperparameters(['--customdir=bin/baselines/'])
 
 # Environment
 go_env = gym.make('gym_go:go-v0', size=args.size)
