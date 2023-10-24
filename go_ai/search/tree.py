@@ -168,7 +168,7 @@ class Node:
         return np.array(move_visits)
 
     def get_ucbs(self):
-        ucbs = np.full(self.actionsize(), np.nan, dtype=np.float)
+        ucbs = np.full(self.actionsize(), np.nan, dtype=np.float32)
         valid_moves = np.argwhere(self.valid_moves()).flatten()
         for a in valid_moves:
             avg_q, n = 0, 0

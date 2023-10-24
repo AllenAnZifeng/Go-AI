@@ -21,7 +21,7 @@ def state_matplot_format(state):
     Only uses the piece and pass channels of the original state
     """
     assert len(state.shape) == 3
-    return state.transpose(1, 2, 0)[:, :, [0, 1, 4]].astype(np.float)
+    return state.transpose(1, 2, 0)[:, :, [0, 1, 4]].astype(np.float32)
 
 
 def plot_move_distr(title, move_distr, valid_moves, scalar=None, pi=False):

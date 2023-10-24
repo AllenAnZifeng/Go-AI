@@ -47,7 +47,7 @@ def greedy_pi(qvals, valid_moves):
     expq = np.exp(qvals - np.max(qvals))
     expq *= valid_moves
     max_qs = np.max(expq)
-    pi = (expq == max_qs).astype(np.int)
+    pi = (expq == max_qs).astype(np.int32)
     pi = preprocessing.normalize(pi[np.newaxis], norm='l1')[0]
     return pi
 
@@ -56,7 +56,7 @@ def batch_greedy_pi(batch_qvals, batch_valid_moves):
     expq = np.exp(batch_qvals - np.max(batch_qvals, axis=1, keepdims=True))
     expq *= batch_valid_moves
     max_qs = np.max(expq, axis=1, keepdims=True)
-    pi = (expq == max_qs).astype(np.int)
+    pi = (expq == max_qs).astype(np.int32)
     pi = preprocessing.normalize(pi, norm='l1')
     return pi
 

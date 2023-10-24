@@ -95,11 +95,11 @@ def events_to_numpy(events):
     unzipped = list(zip(*events))
 
     states = np.array(list(unzipped[0]), dtype=np.float32)
-    actions = np.array(list(unzipped[1]), dtype=np.int)
+    actions = np.array(list(unzipped[1]), dtype=np.int32)
     rewards = np.array(list(unzipped[2]), dtype=np.float32).reshape((-1,))
     next_states = np.array(list(unzipped[3]), dtype=np.float32)
     terminals = np.array(list(unzipped[4]), dtype=np.uint8)
-    wins = np.array(list(unzipped[5]), dtype=np.int)
+    wins = np.array(list(unzipped[5]), dtype=np.int32)
     pis = np.array(list(unzipped[6]), dtype=np.float32)
 
     return states, actions, rewards, next_states, terminals, wins, pis

@@ -219,7 +219,7 @@ class RLNet(nn.Module):
 
         # Sync Metrics
         world_size = comm.Get_size()
-        raw_metrics = np.array(raw_metrics, dtype=np.float)
+        raw_metrics = np.array(raw_metrics, dtype=np.float32)
         with warnings.catch_warnings():
             warnings.simplefilter("ignore", category=RuntimeWarning)
             mean_metrics = np.nanmean(raw_metrics, axis=0)
